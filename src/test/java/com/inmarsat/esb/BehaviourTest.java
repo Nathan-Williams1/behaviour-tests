@@ -10,7 +10,6 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import org.apache.http.HttpResponse;
-import org.apache.http.StatusLine;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpPost;
@@ -22,7 +21,6 @@ import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.junit.Test;
 import org.unix4j.Unix4j;
-import org.unix4j.builder.Unix4jCommandBuilder;
 
 public class BehaviourTest
 {
@@ -31,6 +29,9 @@ public class BehaviourTest
   @Test
   public void bodyTest()
   {
+	BasicConfigurator.configure();
+	//post();
+	//delete();
     get();
     File file = new File("src/test/resources/response.txt");
     String name = Unix4j.grep("Name", new File[] { file }).toStringResult();
@@ -125,7 +126,6 @@ public class BehaviourTest
       String inputLine;
       while ((inputLine = in.readLine()) != null)
       {
-        String inputLine;
         response.append(inputLine);
         response.append(System.getProperty("line.separator"));
       }
