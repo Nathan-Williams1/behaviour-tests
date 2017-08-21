@@ -1,5 +1,5 @@
 
-package com.inmarsat.oneitbtp.esb.exchange_adapter;
+package com.inmarsat.esb.client;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;

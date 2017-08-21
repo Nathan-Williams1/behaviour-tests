@@ -1,5 +1,5 @@
 
-package com.inmarsat.oneitbtp.esb.exchange_adapter;
+package com.inmarsat.esb.client;
 
 import java.util.ArrayList;
 import java.util.List;

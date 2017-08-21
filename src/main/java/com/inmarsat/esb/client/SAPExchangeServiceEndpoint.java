@@ -1,5 +1,5 @@
 
-package com.inmarsat.oneitbtp.esb.exchange_adapter;
+package com.inmarsat.esb.client;
 
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
@@ -27,7 +27,7 @@ public interface SAPExchangeServiceEndpoint {
      * 
      * @param in
      * @return
-     *     returns com.inmarsat.oneitbtp.esb.exchange_adapter.EXCHANGERATERESPONSE
+     *     returns com.inmarsat.esb.client.EXCHANGERATERESPONSE
      */
     @WebMethod(action = "http://esb.oneitbtp.inmarsat.com/exchange_adapter/processSAPExchangeRate")
     @WebResult(name = "EXCHANGE_RATE_RESPONSE", targetNamespace = "http://esb.oneitbtp.inmarsat.com/exchange_adapter", partName = "out")
