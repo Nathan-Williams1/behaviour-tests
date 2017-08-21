@@ -1,0 +1,65 @@
+{
+  "protocol": "http",
+  "port": 9080,
+  "numberOfRequests": 1,
+  "name": "Simple CRM Service",
+  "requests": [
+    {
+      "requestFrom": "::ffff:10.1.3.1:50696",
+      "method": "POST",
+      "path": "/CRMService/CurrencyConversion",
+      "query": {},
+      "headers": {
+        "Content-Length": "116",
+        "Content-Type": "application/x-www-form-urlencoded; charset=ISO-8859-1",
+        "Host": "mountebank-vs-imposter-esb-virtual-services-dev.89d9.dev-inmarsat.openshiftapps.com",
+        "User-Agent": "Apache-HttpClient/4.3.6 (java 1.5)",
+        "Accept-Encoding": "gzip,deflate",
+        "X-Forwarded-Host": "mountebank-vs-imposter-esb-virtual-services-dev.89d9.dev-inmarsat.openshiftapps.com",
+        "X-Forwarded-Port": "80",
+        "X-Forwarded-Proto": "http",
+        "Forwarded": "for=10.135.192.98;host=mountebank-vs-imposter-esb-virtual-services-dev.89d9.dev-inmarsat.openshiftapps.com;proto=http",
+        "X-Forwarded-For": "10.135.192.98"
+      },
+      "body": "{\"convertCurrency\":\"USD\",\"effectiveDate\":\"1/1/2001\",\"originalCurrency\":\"CAD\",\"conversionRate\":\"1.223\",\"name\":\"this\"}",
+      "timestamp": "2017-08-18T17:43:37.792Z"
+    }
+  ],
+  "stubs": [
+    {
+      "responses": [
+        {
+          "is": {
+            "statusCode": 200,
+            "headers": {
+              "Content-Type": "application/json"
+            },
+            "body": {
+              "status": "ok"
+            }
+          }
+        }
+      ],
+      "predicates": [
+        {
+          "equals": {
+            "method": "POST",
+            "path": "/CRMService/CurrencyConversion",
+            "body": {
+              "Name": "this",
+              "OriginalCurrency": "CAD",
+              "ConvertCurrency": "USD",
+              "ConversionRate": "1.223",
+              "EffectiveDate": "1/1/2001"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "_links": {
+    "self": {
+      "href": "http://mountebank-vs-esb-virtual-services-dev.89d9.dev-inmarsat.openshiftapps.com/imposters/9080"
+    }
+  }
+}
