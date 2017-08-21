@@ -30,6 +30,8 @@ public class BehaviourTest
   public void bodyTest()
   {
 	BasicConfigurator.configure();
+	//post();
+	//delete();
     get();
     File file = new File("src/test/resources/response.txt");
     String name = Unix4j.grep("Name", new File[] { file }).toStringResult();
