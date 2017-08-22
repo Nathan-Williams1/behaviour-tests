@@ -1244,7 +1244,8 @@ public class EXCHANGERATE01 {
              */
             public List<EXCHANGERATE01 .IDOC.E1EXCHANGERATE.E1BP10930> getE1BP10930() {
                 if (e1BP10930 == null) {
-                    e1BP10930 = new ArrayList<EXCHANGERATE01 .IDOC.E1EXCHANGERATE.E1BP10930>();
+                	ArrayList<EXCHANGERATE01 .IDOC.E1EXCHANGERATE.E1BP10930> list = new ArrayList<>();
+                    e1BP10930 = list;
                 }
                 return this.e1BP10930;
             }

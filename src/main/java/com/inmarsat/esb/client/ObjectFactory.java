@@ -112,7 +112,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://esb.oneitbtp.inmarsat.com/exchange_adapter", name = "EXCHANGE_RATE_RESPONSE")
     public JAXBElement<EXCHANGERATERESPONSE> createEXCHANGERATERESPONSE(EXCHANGERATERESPONSE value) {
-        return new JAXBElement<EXCHANGERATERESPONSE>(_EXCHANGERATERESPONSE_QNAME, EXCHANGERATERESPONSE.class, null, value);
+    	return new JAXBElement<>(_EXCHANGERATERESPONSE_QNAME, EXCHANGERATERESPONSE.class, null, value);
     }
 
 }
