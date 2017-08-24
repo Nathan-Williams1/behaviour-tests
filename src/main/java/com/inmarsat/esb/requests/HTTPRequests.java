@@ -1,4 +1,4 @@
-package resources;
+package com.inmarsat.esb.requests;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -21,6 +21,8 @@ import org.apache.log4j.Logger;
  *
  */
 public class HTTPRequests {
+	private HTTPRequests() {
+	}
 
 	private static final Logger logger = Logger.getLogger(HTTPRequests.class);
 
@@ -37,6 +39,7 @@ public class HTTPRequests {
 	public static void post(String name, String originalCurrency, String convertCurrency, String conversionRate,
 			String effectiveDate) {
 		BasicConfigurator.configure();
+		Logger.getLogger("org.apache.http").setLevel(org.apache.log4j.Level.OFF);
 		String payload = "{ \"protocol\": \"http\", \"port\": 9080, \"numberOfRequests\": 0, \"name\": \"Simple CRM Service\", \"requests\": [], \"stubs\": [ { \"responses\": [ { \"is\": { \"statusCode\": 200, \"headers\": { \"Content-Type\": \"application/json\" }, \"body\": { \"status\": \"ok\" } } } ], \"predicates\": [ { \"equals\": { \"method\": \"POST\", \"path\": \"/CRMService/CurrencyConversion\", \"body\": { \"Name\": \""
 				+ name + "\", \"OriginalCurrency\": \"" + originalCurrency + "\", \"ConvertCurrency\": \""
 				+ convertCurrency + "\", \"ConversionRate\": \"" + conversionRate + "\", \"EffectiveDate\": \""

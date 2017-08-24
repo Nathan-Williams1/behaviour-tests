@@ -1,4 +1,4 @@
-package resources;
+package com.inmarsat.esb.requests;
 
 import javax.xml.datatype.DatatypeConfigurationException;
 import javax.xml.datatype.DatatypeFactory;
@@ -19,6 +19,9 @@ import com.inmarsat.esb.client.EXCHANGERATE01.IDOC.EDIDC40;
 import com.inmarsat.esb.client.EXCHANGERATE01.IDOC.E1EXCHANGERATE.E1BP10930;
 
 public class SOAPRequest {
+	private SOAPRequest() {
+	}
+
 	private static final Logger logger = Logger.getLogger(SOAPRequest.class);
 
 	/**
@@ -84,7 +87,7 @@ public class SOAPRequest {
 		e1ExchangeRate.setCHGFIXED("1");
 		e1ExchangeRate.setDEVALLOW("de1");
 		prepareE1BP10930(objectFactory, e1ExchangeRate);
-		prepareE1BP10930_1(objectFactory, e1ExchangeRate);
+		prepareE1BP109301(objectFactory, e1ExchangeRate);
 		return e1ExchangeRate;
 	}
 
@@ -92,20 +95,20 @@ public class SOAPRequest {
 	 * @param objectFactory
 	 * @param e1ExchangeRate
 	 */
-	private static void prepareE1BP10930_1(ObjectFactory objectFactory, E1EXCHANGERATE e1ExchangeRate) {
-		E1BP10930 e1bp10930_1 = objectFactory.createEXCHANGERATE01IDOCE1EXCHANGERATEE1BP10930();
-		e1bp10930_1.setSEGMENT("1");
-		e1bp10930_1.setRATETYPE("M");
-		e1bp10930_1.setFROMCURR("AUD");
-		e1bp10930_1.setTOCURRNCY("NOK");
-		e1bp10930_1.setVALIDFROM("20151231");
-		e1bp10930_1.setEXCHRATE("6.42585");
-		e1bp10930_1.setFROMFACTOR("1");
-		e1bp10930_1.setTOFACTOR("1");
-		e1bp10930_1.setEXCHRATEV("0.0000");
-		e1bp10930_1.setFROMFACTORV("0");
-		e1bp10930_1.setTOFACTORV("7");
-		e1ExchangeRate.getE1BP10930().add(e1bp10930_1);
+	private static void prepareE1BP109301(ObjectFactory objectFactory, E1EXCHANGERATE e1ExchangeRate) {
+		E1BP10930 e1bp109301 = objectFactory.createEXCHANGERATE01IDOCE1EXCHANGERATEE1BP10930();
+		e1bp109301.setSEGMENT("1");
+		e1bp109301.setRATETYPE("M");
+		e1bp109301.setFROMCURR("AUD");
+		e1bp109301.setTOCURRNCY("NOK");
+		e1bp109301.setVALIDFROM("20151231");
+		e1bp109301.setEXCHRATE("6.42585");
+		e1bp109301.setFROMFACTOR("1");
+		e1bp109301.setTOFACTOR("1");
+		e1bp109301.setEXCHRATEV("0.0000");
+		e1bp109301.setFROMFACTORV("0");
+		e1bp109301.setTOFACTORV("7");
+		e1ExchangeRate.getE1BP10930().add(e1bp109301);
 	}
 
 	/**

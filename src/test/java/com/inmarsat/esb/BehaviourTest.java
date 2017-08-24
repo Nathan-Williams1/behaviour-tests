@@ -9,8 +9,8 @@ import org.apache.log4j.BasicConfigurator;
 
 import org.junit.Test;
 
-import resources.HTTPRequests;
-import resources.SOAPRequest;
+import com.inmarsat.esb.requests.HTTPRequests;
+import com.inmarsat.esb.requests.SOAPRequest;
 
 public class BehaviourTest {
 
